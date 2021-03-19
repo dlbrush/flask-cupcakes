@@ -1,5 +1,4 @@
 from flask import Flask, request, render_template, jsonify
-from flask_debugtoolbar import DebugToolbarExtension
 from models import db, connect_db, Cupcake
 
 app = Flask(__name__)
@@ -8,8 +7,6 @@ app.config['SECRET_KEY'] = 'cupc4k3s-'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql:///cupcakes'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SQLALCHEMY_ECHO'] = True
-
-debug = DebugToolbarExtension(app)
 
 connect_db(app)
 
